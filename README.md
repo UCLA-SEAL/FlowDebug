@@ -83,7 +83,10 @@ All under src/main/scala/examples/benchmarks
         symbolic_benchmarks (tainted data type versions)
         provenance_benchmarks (unused, implementations that only use provenance RDD wrapper with no additional tainting/influence functions)
         
-### Evaluation Name to Code Benchmark Name: (will have varying suffix depending on benchmark type/category, e.g. "*Baseline", "*Analysis", "*Influence", "*Symbolic")
+### Evaluation Name to Code Benchmark Name:
+
+(will have varying suffix depending on benchmark type/category, e.g. "*Baseline", "*Analysis", "*Influence", "*Symbolic")
+
     Note: Weather uses UDF-aware tainting, Course Avg uses both tainting and influence functions, the remainder use only influence functions.
     Weather: Weather[suffix]. No Influence Function version applicable. (Combo is unused but presents an example where influence function + tainting are used, though on a smaller dataset)
     Airport:  AirportTransit[suffix]
