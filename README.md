@@ -63,5 +63,42 @@ series = {SoCC '20}
 
 
 
+### API notes (mapping to code in the SoCC 2020 paper)
+
+Key Paper API -> Code reference mapping: (paths relative to src/main/scala/)
+    Tainted Data Wrapper API -> symbolicprimitives/ (In general, 'taint' is referenced as 'symbolic' in the code as an outdated naming standard)
+    FlowDebugContext -> sparkwrapper/SparkContextWithDP.scala
+    ProvenanceRDD -> provenance/rdd/ (contains different RDD wrappers and logic for extracting provenance of individual values)
+    Provenance -> provenance/data/ (contains different implementations, default RoaringBitmapProvenance - set in Provenance object (provenanceFactory variable))
+    InfluenceFunction -> InfluenceTracker (under provenance/rdd/, contains most/all influence function implementations)
+Benchmarks: All under src/main/scala/examples/benchmarks
+    Dataset generators available under generators folder.
+    Split into folders:
+        baseline (Titian)
+        bigsift_benchmarks (note: 'bigsift' folder is bigsift-required code)
+        influence_benchmarks (influence function programs)
+        symbolic_benchmarks (tainted data type versions)
+        provenance_benchmarks (unused, implementations that only use provenance RDD wrapper with no additional tainting/influence functions)
+Evaluation Name to Code Benchmark Name: (will have varying suffix depending on benchmark type/category, e.g. "*Baseline", "*Analysis", "*Influence", "*Symbolic")
+    Note: Weather uses UDF-aware tainting, Course Avg uses both tainting and influence functions, the remainder use only influence functions.
+    Weather: Weather[suffix]. No Influence Function version applicable. (Combo is unused but presents an example where influence function + tainting are used, though on a smaller dataset)
+    Airport:  AirportTransit[suffix]
+    Department GPA: StudentGradesV2[suffix]
+    Course Avg: StudentGradesComboV3[suffix] (under `influence_benchmarks`)
+    Student Info: StudentInfo[suffix]
+    Commute Type: CommuteType[suffix]
+Collapse
+
+
+
+
+
+
+
+
+
+
+
+
 
 
