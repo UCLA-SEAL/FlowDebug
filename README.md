@@ -90,8 +90,8 @@ All under src/main/scala/examples/benchmarks
     Note: Weather uses UDF-aware tainting, Course Avg uses both tainting and influence functions, the remainder use only influence functions.
     Weather: Weather[suffix]. No Influence Function version applicable. (Combo is unused but presents an example where influence function + tainting are used, though on a smaller dataset)
     Airport:  AirportTransit[suffix]
-    Department GPA: StudentGradesV2[suffix]
-    Course Avg: StudentGradesComboV3[suffix] (under `influence_benchmarks`)
+    Course Grades: StudentGradesV2[suffix]
+    Course Avg: StudentGradesComboV3[suffix] (under `influence_benchmarks`) - not used in evaluations
     Student Info: StudentInfo[suffix]
     Commute Type: CommuteType[suffix]
 Collapse
